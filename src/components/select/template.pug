@@ -1,0 +1,107 @@
+mixin select(options = {})
+    -
+        var content = options.content ? options.content : [];
+        var multiple = options.multiple ? options.multiple : false;
+        var disabled = options.disabled ? options.disabled : false;
+        var search = options.search ? options.search : false;
+        var placeholder = options.placeholder ? options.placeholder : '';
+        var name = options.name ? options.name : 'select';
+
+        var classes = 'select';
+            classes += options.class ? (' ' + options.class) : '';
+            classes += options.style != '' ? (' select--'+ options.style) : '';
+            classes += options.search ? (' select--search') : '';
+
+
+    div(class= classes)
+        select(name= name, multiple= multiple, placeholder= placeholder, disabled= disabled, data-component= "select")
+            each item, index in content
+                if item.type == 'group' || item.list
+                    -
+                        var title = item.title ? item.title : '';
+                        var list = item.list ? item.list : [];
+
+                    optgroup(label= title)
+                        each option, index in list
+                            +selectOption(option)
+
+                else 
+                    +selectOption(item)
+
+
+mixin selectOption(options = {})
+    -
+        let title = options.title ? options.title : 'checkbox';
+        let value = options.value ? options.value : 'value';
+        let active = options.active ? options.active : false;
+        let disabled= options.disabled ? options.disabled : false;
+
+    option(value= value, selected= active, disabled= disabled)= title 
+
+//- +select({
+//-     class: '', 
+//-     style: '', 
+//-     name: 'select-1', 
+//-     placeholder: 'placeholder', 
+//-     multiple: false, 
+//-     disabled: false, 
+//-     search: false, 
+//-     content: [
+//-         {
+//-             title: 'option',
+//-             value: 'option value',
+//-             active: false,
+//-             disabled: false,
+//-         },
+//-     ]
+//- })
+
+//- With groups
+
+//- +select({
+//-     class: '', 
+//-     style: '', 
+//-     name: 'select-1', 
+//-     placeholder: 'placeholder', 
+//-     multiple: false, 
+//-     disabled: false, 
+//-     search: false, 
+//-     content: [
+//-         {
+//-             type: 'group',
+//-             title: 'group title',
+//-             list: [
+//-                 {
+//-                     title: 'option',
+//-                     value: 'option value',
+//-                     active: false,
+//-                     disabled: false,
+//-                 },
+//-                 {
+//-                     title: 'option',
+//-                     value: 'option value',
+//-                     active: false,
+//-                     disabled: false,
+//-                 }
+//-             ],
+//-         },
+//-         {
+//-             type: 'group',
+//-             title: 'group title 2',
+//-             list: [
+//-                 {
+//-                     title: 'option',
+//-                     value: 'option value',
+//-                     active: false,
+//-                     disabled: false,
+//-                 },
+//-                 {
+//-                     title: 'option',
+//-                     value: 'option value',
+//-                     active: false,
+//-                     disabled: false,
+//-                 }
+//-             ],
+//-         },
+//-     ]
+//- })

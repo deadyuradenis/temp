@@ -1,0 +1,203 @@
+@import "@theme/vars.scss";
+
+.s-intro {
+    box-sizing: border-box;
+    position: relative;
+    min-height: 100vh;
+    max-height: 1440px;
+    padding: 200px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-xl) {
+        padding: 160px 0;
+    }
+
+    @media only screen and (max-width: $bp-lg) {
+        padding: 120px 0;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+        padding: 100px 0 80px;
+    }
+
+    @media only screen and (min-height: 1440px) {
+        min-height: 1440px;
+        max-height: none;
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__inner {
+        box-sizing: border-box;
+        position: relative;
+        z-index: 1;
+        max-width: 780px;
+        margin: auto 0;
+
+        &>*:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        color: #000;
+        margin-bottom: 80px;
+
+        @media only screen and (max-width: $bp-xl) {
+            margin-bottom: 64px;
+        }
+
+        @media only screen and (max-width: $bp-lg) {
+            margin-bottom: 48px;
+        }
+
+        @media only screen and (max-width: $bp-md) {
+            margin-bottom: 32px;
+        }
+
+        @media only screen and (max-width: $bp-sm) {
+            margin-bottom: 24px;
+        }
+
+        span{
+            color: $blue;
+        }
+    }
+
+    &__info {
+
+        &>*:last-child{
+            margin-bottom: 0;
+        }
+
+        p{
+            font-size: 20px;
+            line-height: 120%;
+            color: #000;
+            margin-bottom: 10px;
+
+            @media only screen and (max-width: $bp-lg) {
+                font-size: 18px;
+            }
+
+            @media only screen and (max-width: $bp-md) {
+                font-size: 16px;
+            }
+
+            strong{
+                font-weight: 700;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: 0 0 10px;
+        
+            li {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                color: $blue;
+                padding: 0 0 0 25px;
+                margin: 0 0 5px;
+                min-height: 24px;
+
+                @media only screen and (max-width: $bp-lg) {
+                    min-height: 20px;
+                    padding-left: 20px;
+                }
+
+                @media only screen and (max-width: $bp-md) {
+                    min-height: 18px;
+                }
+        
+                &:last-child{
+                    margin-bottom: 0;
+                }
+        
+                &::before{
+                    content: "";
+                    position: absolute;
+                    display: flex;
+                    flex-shrink: 0;
+                    width: 5px;
+                    height: 1.5px;
+                    background-color: #000;
+                    margin: 12px 10px;
+                    left: 0;
+                    top: 0;
+        
+                    @media only screen and (max-width: $bp-lg) {
+                        width: 4px;
+                        height: 1px;
+                        margin: 9px 8px;
+                    }
+
+                    @media only screen and (max-width: $bp-md) {
+                        margin: 8px;
+                    }
+                }
+
+                p{
+                    margin-bottom: 5px;
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &__actions {
+        margin: 60px -15px 0;
+        display: flex;
+        flex-wrap: wrap;
+        
+        @media only screen and (max-width: $bp-xl) {
+            margin-top: 44px;
+        }
+
+        @media only screen and (max-width: $bp-lg) {
+            margin-top: 16px;
+        }
+
+        @media only screen and (max-width: $bp-md) {
+            margin-top: 8px;
+        }
+
+        @media only screen and (max-width: $bp-sm) {
+            margin-top: 4px;
+        }
+
+    }
+
+    &__button {
+        margin: 20px 15px 0;
+
+        @media only screen and (max-width: $bp-lg) {
+            margin: 16px 10px 0;
+        }
+
+        @media only screen and (max-width: $bp-sm) {
+            flex-grow: 1;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+mixin header(options = {})
+    header.header(data-header="component")
+        .container.header__container
+            .header__inner 
+                a.header__logo(href="#body") 
+                    img(src="../../assets/media/logo.svg", alt="")
+                
+                button.header__burger(type="button", data-header="burger")
+                    span 
+                
+                .header__dropdown(data-header="dropdown")
+                    .header__dropdown-inner 
+                        nav.header__nav
+                            a.link.header__link.is-active(href="#") Бизнес
+                            a.link.header__link(href="#") О нас
+                            a.link.header__link(href="#") Цены
+                            a.link.header__link(href="#") Оформить заказ

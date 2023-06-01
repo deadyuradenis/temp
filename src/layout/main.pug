@@ -1,0 +1,27 @@
+include ./styles.pug
+include ./scripts.pug
+
+include /components/input-file/template
+include /components/select/template
+include /components/range/template
+
+include /components/preloader/template
+include /components/header/template
+include /components/footer/template
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        +preloaderStyles()
+
+        block title
+        
+    body.body#body
+        block body
+
+        +preloader()
+        +preloaderScripts()
+        include /assets/sprite/sprite.svg

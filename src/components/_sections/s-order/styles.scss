@@ -1,0 +1,105 @@
+@import "@theme/vars.scss";
+
+.s-order {
+    box-sizing: border-box;
+    position: relative;
+    padding: 120px 0 150px;
+    color: #fff;
+    background-color: #272733;
+
+    @media only screen and (max-width: $bp-xl) {
+        padding: 100px 0 120px;
+    }
+
+    @media only screen and (max-width: $bp-lg) {
+        padding: 80px 0 100px;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+        padding: 60px 0 80px;
+    }
+
+    &__bg {
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .container{
+        position: relative;
+        z-index: 1;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 80px;
+
+        @media only screen and (max-width: $bp-xl) {
+            margin-bottom: 60px;
+        }
+
+        @media only screen and (max-width: $bp-lg) {
+            margin-bottom: 35px;
+        }
+
+        @media only screen and (max-width: $bp-md) {
+            margin-bottom: 28px;
+        }
+
+        &>*:last-child{
+           margin-bottom: 0; 
+        }
+    }
+
+    &__title {
+        font-weight: 800;
+        margin-bottom: 30px;
+
+        @media only screen and (max-width: $bp-lg) {
+            margin-bottom: 20px;
+        }
+
+        @media only screen and (max-width: $bp-md) {
+            margin-bottom: 15px;
+        }
+
+        span{
+            color: $blue;
+        }
+    }
+
+    &__subtitle {
+        color: #BBBBBB;
+        margin-bottom: 15px;
+
+        @media only screen and (max-width: $bp-lg) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__inner {
+    }
+
+    &__steps {
+        margin-bottom: 80px;
+        
+        @media only screen and (max-width: $bp-lg) {
+            margin-bottom: 60px;
+        }
+    }
+
+    &__form {
+    }
+}

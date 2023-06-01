@@ -1,0 +1,42 @@
+@import "@theme/vars.scss";
+
+.link{
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    fill: #fff;
+    text-decoration: none;
+    transition: fill 0.35s ease, color 0.35s ease, opacity 0.35s ease;
+
+    &:hover{
+        color: $blue;
+        fill: $blue;
+    }
+
+    span{
+
+    }
+
+    .icon{
+        width: 24px;
+        height: 24px;
+    }
+
+    .icon + span {
+        margin-left: 5px;
+    }
+
+    span + .icon{
+        margin-left: 5px;
+    }
+
+    &--pink{
+        color: $blue;
+        fill: $blue;
+
+        &:hover{
+            color: #fff;
+            fill: #fff;
+        }
+    }
+}

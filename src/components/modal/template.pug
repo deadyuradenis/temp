@@ -1,0 +1,18 @@
+mixin modals()
+
+    .modal.fade#callback(tabindex="-1" aria-hidden="true")
+        .modal-dialog.modal-dialog-centered
+            .modal-content
+                button.modal-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+                    svg.icon
+                        use(xlink:href="#close")
+
+                .modal__main 
+                    .modal__header 
+                        h2.modal__title Введите ваши #[span контактные данные]
+
+                    .modal__body
+                       
+//- data-bs-toggle="modal" data-bs-target="#callback"
+//- data-bs-toggle="modal" data-bs-target="#chanels"
+//- data-bs-toggle="modal" data-bs-target="#success"
